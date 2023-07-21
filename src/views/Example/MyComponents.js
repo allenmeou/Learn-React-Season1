@@ -1,50 +1,60 @@
 import React from "react";
 
 class MyComponents extends React.Component {
-  // STATE
   state = {
-    name: "Minamo",
-    chanel: "Minamo Jav chanel",
-    title: "",
+    firstName: "",
+
     image: "",
   };
 
-  // EVENT
-  handleChangeName = (event) => {
+  handleChangeFirstName = (event) => {
     this.setState({
-      name: event.target.value,
-    });
-  };
-  handleClickButton = () => {
-    this.setState({
-      chanel: "JAV Chanel",
-      title: "Cảm ơn vì đăng ký , tặng bạn tấm hình để ngắm nhé ^^",
-      image: "https://scanlover.com/assets/images/11110-UKZH0An1YAonmvWl.jpeg",
+      firstName: event.target.value,
     });
   };
 
+  handleSubmitForm = (event) => {
+    event.preventDefault();
+    if (this.state.firstName) {
+      this.setState({
+        image:
+          "https://scanlover.com/assets/images/11110-UKZH0An1YAonmvWl.jpeg",
+      });
+    }
+    // console.log(this.state);
+  };
+  handleClickInput = (event) => {
+    console.log(">>> Tên Idol: ", this.state);
+  };
   // RENDER
   render() {
-    console.log(">>> call render :", this.state);
+    // console.log(">>> call render :", this.state);
     return (
       <div>
-        <div>
-          <h1>My Favorite JAV</h1>
+        <img
+          src="https://image.lag.vn/upload/news/20/03/26/90469413_226394772064889_3014365476064067584_o_XBPW.jpg"
+          alt=""
+          className="App-logo "
+        />
+        <h2>Nhập tên IDOL </h2>
+        <form onSubmit={this.handleSubmitForm}>
+          <label htmlFor="fName">First name:</label>
+          <br />
           <input
             type="text"
-            value={this.state.name}
-            onChange={(event) => this.handleChangeName(event)}
+            value={this.state.firstName}
+            onChange={(event) => this.handleChangeFirstName(event)}
           />
-          <h2> My name is : {this.state.name}</h2>
-        </div>
-        <div>
-          <h3>My Youtube Chanel : {this.state.chanel}</h3>
-          <button onClick={() => this.handleClickButton()}>Đăng ký</button>
-        </div>
-        <div>
-          <h4>{this.state.title}</h4>
-          <img src={this.state.image} alt="" />
-        </div>
+          <br /> <br />
+          <input
+            onClick={(event) => this.handleClickInput(event)}
+            type="submit"
+            value="Tìm kiếm"
+          />
+        </form>
+        <>
+          <img className="image-logo-idol" src={this.state.image} alt="" />
+        </>
       </div>
     );
   }
