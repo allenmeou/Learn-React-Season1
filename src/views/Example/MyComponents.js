@@ -4,7 +4,6 @@ import SearchJavIdol from "./SearchJavIdol";
 class MyComponents extends React.Component {
   state = {
     firstName: "",
-
     image: "",
   };
 
@@ -59,7 +58,7 @@ class MyComponents extends React.Component {
 
         <div>
           <p>Jav Search Url </p>
-          <SearchJavIdol name={"one"} />
+          <SearchJavIdol name={"one"} age={"19"} />
           <SearchJavIdol name={"two"} />
           <SearchJavIdol name={"three"} />
         </div>

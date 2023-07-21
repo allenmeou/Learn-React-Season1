@@ -29,6 +29,10 @@ class SearchJavIdol extends Component {
   };
 
   render() {
+    console.log(">>> check point", this.props);
+    // let name = this.props.name;
+    // let age = this.props.age;
+    let { name, age } = this.props;
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
@@ -44,7 +48,9 @@ class SearchJavIdol extends Component {
         </a>
 
         <>
-          <div>child component: {this.props.name}</div>
+          <div>
+            Child Coponent: {name} - {age}
+          </div>
         </>
       </form>
     );
