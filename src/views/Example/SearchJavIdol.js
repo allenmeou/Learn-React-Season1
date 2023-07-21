@@ -39,13 +39,13 @@ class SearchJavIdol extends Component {
             onChange={this.handleNameChange}
           />
         </label>
-        <button type="submit">Submit</button>
-        <br />
-        <div>
-          <a className="a-search" href={this.state.link}>
-            Tìm Kiếm
-          </a>
-        </div>
+        <a className="a-search" href={this.state.link}>
+          Tìm Kiếm
+        </a>
+
+        <>
+          <div>child component: {this.props.name}</div>
+        </>
       </form>
     );
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import SearchJavIdol from "./SearchJavIdol";
 
 class MyComponents extends React.Component {
   state = {
@@ -55,6 +56,13 @@ class MyComponents extends React.Component {
         <>
           <img className="image-logo-idol" src={this.state.image} alt="" />
         </>
+
+        <div>
+          <p>Jav Search Url </p>
+          <SearchJavIdol name={"one"} />
+          <SearchJavIdol name={"two"} />
+          <SearchJavIdol name={"three"} />
+        </div>
       </div>
     );
   }
