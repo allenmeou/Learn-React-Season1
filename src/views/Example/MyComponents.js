@@ -1,17 +1,22 @@
 import React from "react";
 
 class MyComponents extends React.Component {
+  // STATE
   state = {
     name: "meou",
     chanel: "meou chanel",
   };
-
+  // EVENT
   handleChangeName = (event) => {
     this.setState({
       name: event.target.value,
     });
   };
-
+  handleClickButton = () => {
+    console.log("clicked");
+    alert("Đã Đăng Ký");
+  };
+  // RENDER
   render() {
     return (
       <div>
@@ -26,6 +31,7 @@ class MyComponents extends React.Component {
         </div>
         <div>
           <h2>My Youtube Chanel : {this.state.chanel}</h2>
+          <button onClick={() => this.handleClickButton()}>Đăng ký</button>
         </div>
       </div>
     );
