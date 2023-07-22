@@ -25,19 +25,13 @@ class MyComponents extends React.Component {
     ],
   };
 
-  handleSubmitForm = (event) => {
-    event.preventDefault();
-    if (this.state.firstName) {
-      this.setState({
-        image:
-          "https://scanlover.com/assets/images/11110-UKZH0An1YAonmvWl.jpeg",
-      });
-    }
-    // console.log(this.state);
+  addNewJobs = (job) => {
+    console.log(">>> check job from paren :", job);
+    this.setState({
+      arrJobs: [...this.state.arrJobs, job],
+    });
   };
-  handleClickInput = (event) => {
-    console.log(">>> Tên Idol: ", this.state);
-  };
+
   // RENDER
   render() {
     // console.log(">>> call render :", this.state);
@@ -49,7 +43,7 @@ class MyComponents extends React.Component {
           className="App-logo "
         />
         <h2> JAV PROGRAMING </h2>
-        <AddComponents />
+        <AddComponents addNewJobs={this.addNewJobs} />
 
         <>
           <img className="image-logo-idol" src={this.state.image} alt="" />

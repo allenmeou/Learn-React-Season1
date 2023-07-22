@@ -2,12 +2,12 @@ import React from "react";
 
 class AddComponents extends React.Component {
   state = {
-    titleJob: "",
+    title: "",
     salaryJob: "",
   };
   handleChangeTitleJob = (event) => {
     this.setState({
-      titleJob: event.target.value,
+      title: event.target.value,
     });
   };
 
@@ -16,14 +16,25 @@ class AddComponents extends React.Component {
       salaryJob: event.target.value,
     });
   };
+
   handleSubmitForm = (event) => {
     event.preventDefault();
-    if (this.state.firstName) {
-      this.setState({
-        image:
-          "https://scanlover.com/assets/images/11110-UKZH0An1YAonmvWl.jpeg",
-      });
+
+    if (!this.state.title || !this.state.salaryJob) {
+      alert("messing required params");
+      return;
     }
+
+    this.props.addNewJobs({
+      id: Math.floor(Math.random() * 1001),
+      title: this.state.title,
+      salary: this.state.salaryJob,
+    });
+
+    this.setState({
+      title: "",
+      salaryJob: "",
+    });
   };
   handleClickInput = (event) => {
     console.log(">>> Tên Idol: ", this.state);
@@ -35,7 +46,7 @@ class AddComponents extends React.Component {
         <label htmlFor="fName">Job title:</label> <br />
         <input
           type="text"
-          value={this.state.titleJob}
+          value={this.state.title}
           onChange={(event) => this.handleChangeTitleJob(event)}
         />{" "}
         <br />
@@ -49,7 +60,7 @@ class AddComponents extends React.Component {
         <input
           onClick={(event) => this.handleClickInput(event)}
           type="submit"
-          value="Tìm kiếm"
+          value="Submit"
         />
       </form>
     );
