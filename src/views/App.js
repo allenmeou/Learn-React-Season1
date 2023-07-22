@@ -3,7 +3,7 @@ import MyComponents from "./Example/MyComponents";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App App-header">
       <MyComponents />
     </div>
   );

@@ -1,5 +1,4 @@
-import { Component } from "react";
-import React from "react";
+import { React, Component } from "react";
 
 // CLASS COMPONENT
 class SearchJavIdol extends Component {

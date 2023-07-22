@@ -57,21 +57,21 @@ class MyComponents extends React.Component {
     return (
       <div>
         <img
-          src="https://image.lag.vn/upload/news/20/03/26/90469413_226394772064889_3014365476064067584_o_XBPW.jpg"
+          src="https://mof.com.vn/wp-content/uploads/tong-hop-top-10-dien-vien-jav-dep-nhat-0.jpg"
           alt=""
           className="App-logo "
         />
-        <h2>Nhập tên IDOL </h2>
+        <h2> JAV PROGRAMING </h2>
         <form onSubmit={this.handleSubmitForm}>
           <br />
-          <label htmlFor="fName">First name:</label>
+          <label htmlFor="fName">First name:</label> <br />
           <input
             type="text"
             value={this.state.firstName}
             onChange={(event) => this.handleChangeFirstName(event)}
           />{" "}
           <br />
-          <label htmlFor="fName">Age :</label>
+          <label htmlFor="fName">Age :</label> <br />
           <input
             type="text"
             value={this.state.age}
@@ -89,7 +89,6 @@ class MyComponents extends React.Component {
         </>
 
         <div>
-          <p>Jav Search Url </p>
           <SearchJavIdol
             name={this.state.firstName}
             age={this.state.age}
