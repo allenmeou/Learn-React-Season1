@@ -4,12 +4,36 @@ import SearchJavIdol from "./SearchJavIdol";
 class MyComponents extends React.Component {
   state = {
     firstName: "",
+    age: "",
+    arrJobs: [
+      {
+        id: "job-1",
+        title: "Dev JAV",
+        salary: "500$",
+      },
+      {
+        id: "job-2",
+        title: "Tester JAV",
+        salary: "400$",
+      },
+      {
+        id: "job-3",
+        title: "Project manager JAV",
+        salary: "1000$",
+      },
+    ],
     image: "",
   };
 
   handleChangeFirstName = (event) => {
     this.setState({
       firstName: event.target.value,
+    });
+  };
+
+  handleChangeAge = (event) => {
+    this.setState({
+      age: event.target.value,
     });
   };
 
@@ -38,12 +62,19 @@ class MyComponents extends React.Component {
         />
         <h2>Nhập tên IDOL </h2>
         <form onSubmit={this.handleSubmitForm}>
-          <label htmlFor="fName">First name:</label>
           <br />
+          <label htmlFor="fName">First name:</label>
           <input
             type="text"
             value={this.state.firstName}
             onChange={(event) => this.handleChangeFirstName(event)}
+          />{" "}
+          <br />
+          <label htmlFor="fName">Age :</label>
+          <input
+            type="text"
+            value={this.state.age}
+            onChange={(event) => this.handleChangeAge(event)}
           />
           <br /> <br />
           <input
@@ -58,9 +89,12 @@ class MyComponents extends React.Component {
 
         <div>
           <p>Jav Search Url </p>
-          <SearchJavIdol name={"one"} age={"19"} />
-          <SearchJavIdol name={"two"} />
-          <SearchJavIdol name={"three"} />
+          <SearchJavIdol
+            name={this.state.firstName}
+            age={this.state.age}
+            address={"Bình Dương"}
+            arrJobs={this.state.arrJobs}
+          />
         </div>
       </div>
     );

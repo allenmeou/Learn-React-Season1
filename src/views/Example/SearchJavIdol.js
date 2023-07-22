@@ -32,7 +32,7 @@ class SearchJavIdol extends Component {
     console.log(">>> check point", this.props);
     // let name = this.props.name;
     // let age = this.props.age;
-    let { name, age } = this.props;
+    let { arrJobs } = this.props;
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
@@ -49,7 +49,19 @@ class SearchJavIdol extends Component {
 
         <>
           <div>
-            Child Coponent: {name} - {age}
+            Job List
+            <ul>
+              {arrJobs.map((job) => {
+                console.log(job);
+                return (
+                  <div key={job.id}>
+                    <li>
+                      Name Job: {job.title} - Salary : {job.salary}
+                    </li>
+                  </div>
+                );
+              })}
+            </ul>
           </div>
         </>
       </form>
