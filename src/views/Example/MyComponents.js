@@ -1,10 +1,9 @@
 import React from "react";
 import SearchJavIdol from "./SearchJavIdol";
+import AddComponents from "./AddComponents";
 
 class MyComponents extends React.Component {
   state = {
-    firstName: "",
-    age: "",
     image: "",
 
     arrJobs: [
@@ -24,18 +23,6 @@ class MyComponents extends React.Component {
         salary: "1000",
       },
     ],
-  };
-
-  handleChangeFirstName = (event) => {
-    this.setState({
-      firstName: event.target.value,
-    });
-  };
-
-  handleChangeAge = (event) => {
-    this.setState({
-      age: event.target.value,
-    });
   };
 
   handleSubmitForm = (event) => {
@@ -62,39 +49,14 @@ class MyComponents extends React.Component {
           className="App-logo "
         />
         <h2> JAV PROGRAMING </h2>
-        <form onSubmit={this.handleSubmitForm}>
-          <br />
-          <label htmlFor="fName">First name:</label> <br />
-          <input
-            type="text"
-            value={this.state.firstName}
-            onChange={(event) => this.handleChangeFirstName(event)}
-          />{" "}
-          <br />
-          <label htmlFor="fName">Age :</label> <br />
-          <input
-            type="text"
-            value={this.state.age}
-            onChange={(event) => this.handleChangeAge(event)}
-          />
-          <br /> <br />
-          <input
-            onClick={(event) => this.handleClickInput(event)}
-            type="submit"
-            value="Tìm kiếm"
-          />
-        </form>
+        <AddComponents />
+
         <>
           <img className="image-logo-idol" src={this.state.image} alt="" />
         </>
 
         <div>
-          <SearchJavIdol
-            name={this.state.firstName}
-            age={this.state.age}
-            address={"Bình Dương"}
-            arrJobs={this.state.arrJobs}
-          />
+          <SearchJavIdol arrJobs={this.state.arrJobs} />
         </div>
       </div>
     );
