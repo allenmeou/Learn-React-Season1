@@ -11,17 +11,17 @@ class MyComponents extends React.Component {
       {
         id: "job-1",
         title: "Dev JAV",
-        salary: "500$",
+        salary: "500",
       },
       {
         id: "job-2",
         title: "Tester JAV",
-        salary: "400$",
+        salary: "400",
       },
       {
         id: "job-3",
         title: "Project manager JAV",
-        salary: "1000$",
+        salary: "1000",
       },
     ],
   };
