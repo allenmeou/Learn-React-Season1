@@ -32,6 +32,14 @@ class MyComponents extends React.Component {
     });
   };
 
+  deleteAJob = (job) => {
+    let currentJobs = this.state.arrJobs;
+    currentJobs = currentJobs.filter((item) => item.id !== job.id);
+    this.setState({
+      arrJobs: currentJobs,
+    });
+  };
+
   // RENDER
   render() {
     // console.log(">>> call render :", this.state);
@@ -50,7 +58,10 @@ class MyComponents extends React.Component {
         </>
 
         <div>
-          <SearchJavIdol arrJobs={this.state.arrJobs} />
+          <SearchJavIdol
+            arrJobs={this.state.arrJobs}
+            deleteAJob={this.deleteAJob}
+          />
         </div>
       </div>
     );

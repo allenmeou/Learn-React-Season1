@@ -5,10 +5,17 @@ class SearchJavIdol extends Component {
   state = {
     showJobs: false,
   };
+
   handleShowHide = (status) => {
     this.setState({
       showJobs: !this.state.showJobs,
     });
+  };
+
+  handleOnClickDelete = (job) => {
+    // alert("click me");
+    // console.log(job);
+    this.props.deleteAJob(job);
   };
 
   render() {
@@ -29,7 +36,13 @@ class SearchJavIdol extends Component {
                 return (
                   <div key={job.id}>
                     <li>
-                      Name Job: {job.title} - Salary : {job.salary}
+                      {job.title} - {job.salary}
+                      <button
+                        onClick={() => this.handleOnClickDelete(job)}
+                        style={{ marginLeft: 20 }}
+                      >
+                        Delete
+                      </button>
                     </li>
                   </div>
                 );
