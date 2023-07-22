@@ -5,6 +5,8 @@ class MyComponents extends React.Component {
   state = {
     firstName: "",
     age: "",
+    image: "",
+
     arrJobs: [
       {
         id: "job-1",
@@ -22,7 +24,6 @@ class MyComponents extends React.Component {
         salary: "1000$",
       },
     ],
-    image: "",
   };
 
   handleChangeFirstName = (event) => {
