@@ -40,6 +40,20 @@ class MyComponents extends React.Component {
     });
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log(
+      ">>> run diupdate :",
+      "prev state :",
+      prevState,
+      "current state :",
+      this.state
+    );
+  }
+
+  componentDidMount = () => {
+    console.log(">>> componentDidMount ");
+  };
+
   // RENDER
   render() {
     // console.log(">>> call render :", this.state);
@@ -50,7 +64,7 @@ class MyComponents extends React.Component {
           alt=""
           className="App-logo "
         />
-        <h2> JAV PROGRAMING </h2>
+        <h2> JAV PROGRAMMING </h2>
         <AddComponents addNewJobs={this.addNewJobs} />
 
         <>
