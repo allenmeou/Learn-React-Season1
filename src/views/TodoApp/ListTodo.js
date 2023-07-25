@@ -10,14 +10,6 @@ class ListTodo extends React.Component {
         id: "todo-1",
         title: "Doing homework ",
       },
-      {
-        id: "todo-2",
-        title: "Making video ",
-      },
-      {
-        id: "todo-3",
-        title: "Watch JAV ",
-      },
     ],
     editTodo: {},
   };
