@@ -30,7 +30,7 @@
   input {
     padding: 5px 10px;
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid blue;
   }
   .btn-add-todo {
     padding: 10px 5px;
@@ -79,7 +79,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid blue;
         margin: 10px 0 20px;
         .todo-checkbox {
           max-width: 22px;
@@ -87,6 +87,11 @@
         }
         .todo-title-container {
           display: flex;
+          .edit-todo-container {
+            display: flex;
+            align-items: center;
+            width: 360px;
+          }
         }
       }
       .btn-add-container {

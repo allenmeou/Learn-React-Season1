@@ -17,7 +17,7 @@ function App() {
         closeOnClick
         rtl={false}
         pauseOnFocusLoss
-        draggable
+        draggableY
         pauseOnHover
         theme="dark"
       />

@@ -29,6 +29,12 @@ class AddTodo extends React.Component {
     });
   };
 
+  handleEnterAddToDo = (event) => {
+    if (event.keyCode === 13 || event.keyCode === "Enter") {
+      this.handleOnClickAddToDo();
+    }
+  };
+
   render() {
     let { title } = this.state;
     return (
@@ -38,6 +44,7 @@ class AddTodo extends React.Component {
           placeholder="Add a new task"
           value={title}
           onChange={(event) => this.handleOnChangeTitle(event)}
+          onKeyDown={(event) => this.handleEnterAddToDo(event)}
         />
         <button
           type="button"
