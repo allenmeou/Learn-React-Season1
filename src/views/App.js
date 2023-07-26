@@ -1,14 +1,14 @@
 // import "../styles/global.scss";
-import MyComponents from "./Example/MyComponents";
+// import MyComponents from "./Example/MyComponents";
 import "./App.scss";
 import ListTodo from "./TodoApp/ListTodo";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Nav from "./Nav/Nav";
 import Home from "./Example/Home";
 import About from "./Example/About";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import { Router } from "react-router-dom/cjs/react-router-dom.min";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+// import { Router } from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
   return (
