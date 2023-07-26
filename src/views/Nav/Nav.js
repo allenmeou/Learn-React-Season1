@@ -1,20 +1,27 @@
 import React from "react";
 import "./Nav.scss";
+import { Link, NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 class Nav extends React.Component {
   render() {
     return (
       <div>
         <div className="tabs">
-          <a href="/home" className="tab-item active ">
+          {/* <Link className="tab-item active " to="/"></Link> */}
+          <NavLink
+            to="/"
+            className="tab-item"
+            activeClassName="active"
+            exact={true}
+          >
             Home
-          </a>
-          <a href="/todo" className="tab-item">
+          </NavLink>
+          <NavLink to="/todo" className="tab-item" activeClassName="active">
             Todo
-          </a>
-          <a href="/about" className="tab-item">
+          </NavLink>
+          <NavLink to="/about" className="tab-item" activeClassName="active">
             About
-          </a>
+          </NavLink>
         </div>
       </div>
     );

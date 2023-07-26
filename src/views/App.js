@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Nav from "./Nav/Nav";
 import Home from "./Example/Home";
+import About from "./Example/About";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { Router } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -14,8 +15,8 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Nav />
-        {/* <Home /> */}
         {/* <ListTodo /> */}
+        {/* <Home /> */}
 
         <ToastContainer
           position="top-right"
@@ -29,19 +30,18 @@ function App() {
           pauseOnHover
           theme="dark"
         />
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/todo">
+            <ListTodo />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+        </Switch>
       </div>
-
-      <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/todo">
-          <ListTodo />
-        </Route>
-        <Route path="/about">
-          <MyComponents />
-        </Route>
-      </Switch>
     </BrowserRouter>
   );
 }
