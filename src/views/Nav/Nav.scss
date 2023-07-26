@@ -1,0 +1,27 @@
+.tabs {
+  display: flex;
+  margin: 10px 0;
+}
+
+.tabs .tab-item.active {
+  color: #6a5af9;
+  border-bottom-color: currentColor;
+  border-width: 2px;
+}
+
+.tabs .tab-item {
+  white-space: nowrap;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #999;
+  font-weight: 500;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  border-bottom: 1px solid transparent;
+}
+a {
+  text-decoration: none;
+}
