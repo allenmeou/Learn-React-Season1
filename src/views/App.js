@@ -1,15 +1,17 @@
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+// import { Router } from "react-router-dom/cjs/react-router-dom.min";
+
 // import "../styles/global.scss";
 // import MyComponents from "./Example/MyComponents";
 import "./App.scss";
 import ListTodo from "./TodoApp/ListTodo";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import Nav from "./Nav/Nav";
 import Home from "./Example/Home";
-import About from "./Example/About";
+// import About from "./Example/About";
 import ListUser from "./Users/ListUser";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-// import { Router } from "react-router-dom/cjs/react-router-dom.min";
+import DetailUser from "./Users/DetailUser";
 
 function App() {
   return (
@@ -38,11 +40,14 @@ function App() {
           <Route path="/todo">
             <ListTodo />
           </Route>
-          <Route path="/about">
+          {/* <Route path="/about">
             <About />
-          </Route>
-          <Route path="/user">
+          </Route> */}
+          <Route path="/user" exact>
             <ListUser />
+          </Route>
+          <Route path="/user/:id">
+            <DetailUser />
           </Route>
         </Switch>
       </div>
