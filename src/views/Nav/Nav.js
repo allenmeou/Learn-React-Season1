@@ -1,6 +1,6 @@
 import React from "react";
 import "./Nav.scss";
-import { Link, NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 class Nav extends React.Component {
   render() {
@@ -21,6 +21,9 @@ class Nav extends React.Component {
           </NavLink>
           <NavLink to="/about" className="tab-item" activeClassName="active">
             About
+          </NavLink>
+          <NavLink to="/user" className="tab-item" activeClassName="active">
+            User
           </NavLink>
         </div>
       </div>

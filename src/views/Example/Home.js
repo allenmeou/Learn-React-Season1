@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.scss";
-import { withRouter } from "react-router";
-import Color from "../HOC/Color";
+// import { withRouter } from "react-router";
+// import Color from "../HOC/Color";
 
 class Home extends React.Component {
   // componentDidMount() {
@@ -11,7 +11,7 @@ class Home extends React.Component {
   // }
 
   render() {
-    console.log(">>> check props:", this.props);
+    // console.log(">>> check props:", this.props);
     return (
       <div>
         <form className="form">
