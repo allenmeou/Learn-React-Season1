@@ -13,6 +13,8 @@ class DetailUser extends React.Component {
       this.setState({
         user: res && res.data && res.data.data ? res.data.data : {},
       });
+
+      console.log(res);
     }
   }
 
@@ -22,13 +24,12 @@ class DetailUser extends React.Component {
 
   render() {
     let { user } = this.state;
+    // console.log(user);
 
-    console.log(">>> check props:", this.props);
+    // console.log(">>> check props:", this.props);
 
-    // check Object empty
+    // CHECK EMPTY OBJECT
     let isEmptyObj = Object.keys(user).length === 0;
-
-    console.log(user);
 
     return (
       <>

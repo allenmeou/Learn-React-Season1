@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.scss";
 // import { withRouter } from "react-router";
 // import Color from "../HOC/Color";
+import logo from "../../assets/image/logo-mixi.png";
 
 class Home extends React.Component {
   // componentDidMount() {
@@ -14,6 +15,9 @@ class Home extends React.Component {
     // console.log(">>> check props:", this.props);
     return (
       <div>
+        <>
+          <img style={{ width: 200 }} src={logo} alt="" />
+        </>
         <form className="form">
           <p id="heading">Login</p>
           <div className="field">

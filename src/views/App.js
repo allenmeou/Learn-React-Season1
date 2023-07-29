@@ -1,8 +1,3 @@
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-// import { Router } from "react-router-dom/cjs/react-router-dom.min";
-
 // import "../styles/global.scss";
 // import MyComponents from "./Example/MyComponents";
 import "./App.scss";
@@ -12,6 +7,11 @@ import Home from "./Example/Home";
 // import About from "./Example/About";
 import ListUser from "./Users/ListUser";
 import DetailUser from "./Users/DetailUser";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+// import { Router } from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
   return (
