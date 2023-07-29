@@ -14,7 +14,7 @@ class DetailUser extends React.Component {
         user: res && res.data && res.data.data ? res.data.data : {},
       });
 
-      console.log(res);
+      // console.log(res);
     }
   }
 
