@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.scss";
 // import { withRouter } from "react-router";
 import Color from "../HOC/Color";
-// import logo from "../../assets/image/logo-mixi.png";
+import logo from "../../assets/image/logo-mixi.png";
 import { connect } from "react-redux";
 
 class Home extends React.Component {
@@ -11,12 +11,24 @@ class Home extends React.Component {
   //     this.props.history.push("/todo");
   //   }, 2000);
   // }
-
+  handleDeleteUser = (user) => {
+    console.log(">>> check user delete:", user);
+    this.props.deleteUserRedux(user);
+  };
+  handleAddUser = () => {
+    console.log(">>> check user add ");
+    this.props.addUserRedux();
+  };
   render() {
     console.log(">>> check props:", this.props);
+
+    let listUsers = this.props.data_Redux;
     return (
       <div>
-        <>{/* <img style={{ width: 200 }} src={logo} alt="" /> */}</>
+        <>
+          <img style={{ width: 200 }} src={logo} alt="" />
+        </>
+
         <form className="form">
           <p id="heading">Login</p>
           <div className="field">
@@ -62,6 +74,23 @@ class Home extends React.Component {
           </div>
           <button className="button3">Forgot Password</button>
         </form>
+
+        <div>
+          {listUsers &&
+            listUsers.length > 0 &&
+            listUsers.map((item, index) => {
+              return (
+                <div key={item.id}>
+                  {index + 1} - {item.name} &nbsp;{" "}
+                  <button onClick={() => this.handleDeleteUser(item)}>X</button>
+                  &nbsp;{" "}
+                </div>
+              );
+            })}
+          <button className="button1" onClick={() => this.handleAddUser()}>
+            Add New
+          </button>
+        </div>
       </div>
     );
   }
@@ -75,4 +104,12 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Color(Home));
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteUserRedux: (userDelete) =>
+      dispatch({ type: "DELETE_USER", payload: userDelete }),
+    addUserRedux: () => dispatch({ type: "CREATE_USER" }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Color(Home));
