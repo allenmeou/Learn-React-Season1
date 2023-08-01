@@ -8,6 +8,10 @@ const initState = {
       id: 2,
       name: "Mixi",
     },
+    {
+      id: 3,
+      name: "test data redux",
+    },
   ],
 };
 

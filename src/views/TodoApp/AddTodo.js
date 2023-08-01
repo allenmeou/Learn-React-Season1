@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 class AddTodo extends React.Component {
   state = {

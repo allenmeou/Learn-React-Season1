@@ -1,8 +1,9 @@
 import React from "react";
 import "./Home.scss";
 // import { withRouter } from "react-router";
-// import Color from "../HOC/Color";
-import logo from "../../assets/image/logo-mixi.png";
+import Color from "../HOC/Color";
+// import logo from "../../assets/image/logo-mixi.png";
+import { connect } from "react-redux";
 
 class Home extends React.Component {
   // componentDidMount() {
@@ -12,12 +13,10 @@ class Home extends React.Component {
   // }
 
   render() {
-    // console.log(">>> check props:", this.props);
+    console.log(">>> check props:", this.props);
     return (
       <div>
-        <>
-          <img style={{ width: 200 }} src={logo} alt="" />
-        </>
+        <>{/* <img style={{ width: 200 }} src={logo} alt="" /> */}</>
         <form className="form">
           <p id="heading">Login</p>
           <div className="field">
@@ -69,4 +68,11 @@ class Home extends React.Component {
 }
 
 // export default withRouter(Home);
-export default Home;
+
+const mapStateToProps = (state) => {
+  return {
+    data_Redux: state.users,
+  };
+};
+
+export default connect(mapStateToProps)(Color(Home));
