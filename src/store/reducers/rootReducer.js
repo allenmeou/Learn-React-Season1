@@ -12,6 +12,10 @@ const initState = {
       id: 3,
       name: "test data redux",
     },
+    {
+      id: 4,
+      name: "test data redux",
+    },
   ],
 };
 
